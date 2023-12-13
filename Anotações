@@ -1,0 +1,26 @@
+O que a ToDo List PRECISA?
+    poder colocar o próprio nome no topo
+
+    input para escrever o nome da tarefa
+    botão ao lado do imput para add tarefa
+    botão com menu option para filtrar as tasks entre (All, checked e active) 
+
+    mostrar a tarefa
+    icones depois do nome (checked (verde(sinal da nike)), editar (azul(um lápis?)), cancelar (vermelho(LIXUUU)))
+
+    ENTÃO
+    altera a cor de fundo da tarefa para verde claro (e risca o nome)
+    OU
+    edita a tarefa
+    OU
+    apaga a tarefa
+
+    ESTILO
+    Backgroud gradient ou uma imagem?
+    Estilo cyberpunk como o portfólio?
+
+    IDEIAS PARA O FUTURO
+    1- contador de tarefas concluidas
+    2- outra página mostrando as tarefas completas
+    3- poder criar anotações dentro de cada tarefa
+    4- ao excluir, arrastar pro lado (não implementado)

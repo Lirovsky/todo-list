@@ -1,0 +1,256 @@
+:root {
+    --var-1: rgba(0, 0, 0, .9);
+    --var-2: #ff008b;
+    --var-3: #0ff;
+}
+
+/* geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html {
+    /* height: 100vh; */
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: url("../img/bg.jpg") no-repeat fixed center;
+    color: var(--var-3);
+}
+
+/* ola */
+.todo-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--var-1);
+    padding: 2rem;
+    border-radius: 25px;
+}
+.greeting .title {
+	display: flex;
+    border: 3px var(--var-3);
+    border-style: solid none solid solid;
+    padding: 1rem 0 1rem .5rem;
+    font-size: 1.5rem;
+	font-weight: 700;
+}
+.greeting .title span i {
+	margin-right: .5rem;
+    color: var(--var-2);
+}
+.greeting .title input {
+	margin-left: 0.5rem;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--var-2);
+    font-size: 1.5rem;
+	font-weight: 700;
+}
+
+/* title */
+.top {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 1rem .5rem;
+    border: 3px var(--var-3);
+    border-style: none solid solid none;
+}
+.top h2 {
+    color: var(--var-3);
+}
+.top span i {
+    color: var(--var-2);
+    margin: 0 .5rem 0 .5rem;
+}
+
+/* add task */
+form {
+    display: flex;
+    align-items: end;
+    gap: 50px;
+    padding: 1rem 0 1rem .5rem;
+    border: 3px var(--var-3);
+    border-style: none none solid solid;
+}
+.form-control p {
+    margin-bottom: .5rem;
+    color: var(--var-2);
+}
+form input {
+    background: none;
+    outline: none;
+    border: 2px solid var(--var-3);
+    padding: .5rem;
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--var-3);
+}
+form input::placeholder {
+    font-size: 15px;
+    color: var(--var-3);
+}
+form button {
+    background: none;
+    outline: none;
+    border: 2px solid var(--var-3);
+    width: 65px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: green;
+    text-align: center;
+    transition: all .5s;
+}
+form button:hover {
+    transform: scale(1.1);
+}
+#cancel-edit-btn {
+    width: 80px;
+    color: var(--var-2);
+}
+form .filter-todo{
+    border: none;
+    outline: none;
+    border: 2px solid var(--var-3);
+    background: none;
+    color: var(--var-3);
+    padding: .5rem;
+    border-radius: 10px;
+}
+form .filter-todo option {
+    display: flex;
+    gap: 50px;
+    background: var(--var-1);
+    color: var(--var-3);
+    border-radius: 10px;
+    appearance: none;
+}
+.hide {
+    display: none;
+}
+
+/* tasks */
+.todo-list {
+    padding: .5rem 1rem 1rem 1rem;
+    border: 3px var(--var-3);
+    border-style: none solid solid none;
+}
+.todo-list .todo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem;
+    border: 1px solid var(--var-3);
+    border-radius: 30px;
+    transition: .3s;
+    margin-top: .5rem;
+}
+.todo h3 {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--var-3);
+    padding-left: .5rem;
+}
+.todo button {
+    margin-left: .5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--var-3);
+    transition: all .5s;
+}
+.todo button:hover, .done button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px #00ffff,0 0 5px #00ffff,0 0 5px #00ffff,0 0 5px #00ffff;
+}
+
+/* buttons tasks */
+.todo .finish-todo i {
+    color: green;
+}
+.todo .edit-todo i {
+    color: blue;
+}
+.todo .remove-todo i {
+    color: red;
+}
+#todo-list {
+    max-height: 350px;
+    overflow: auto;
+}
+/* completed task style */
+.done {
+    background-color: var(--var-1);
+}
+.done h3 {
+    color: var(--var-2);
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 1050px) {
+    form {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+@media (max-width: 500px) {
+    .todo-container {
+        position: fixed;
+        max-width: 300px;
+        padding: 1rem;
+    }
+    .greeting .title {
+        border: none;
+        padding: .5rem;
+        font-size: 1.2rem;
+    }
+    .greeting .title input {
+        font-size: 1.2rem;
+    }
+    .greeting .title span i {
+        display: none;
+    }
+    .top {
+        padding: .5rem;
+        border: 1px var(--var-3);
+        border-style: solid none solid none;
+    }
+    .top span i {
+        display: none;
+    }
+    form {
+        gap: 20px;
+        padding: .5rem;
+        border: none;
+    }
+    .form-control {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .form-control p {
+        font-size: 18px;
+    }
+    .todo-list {
+        padding: .5rem;
+        border: 1px var(--var-3);
+        border-style: solid none none none;
+    }
+    .todo button {
+        margin-left: .2rem;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+    }
+}
